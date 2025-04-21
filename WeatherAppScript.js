@@ -1,7 +1,7 @@
 // Project: Weather App
 // JavaScript Course
 // Golan van der Bend
-// 18-04-2025
+// 21-04-2025
 
 // Get search input 
 function getLocation(){
@@ -61,7 +61,6 @@ fetch(url)
             if (datum.toLocaleDateString() == vandaag.toLocaleDateString()) { // datum = vandaag. 
                 console.log('Vandaag', 'maximaal :', index.day.maxtemp_c, 'minimaal :', index.day.mintemp_c, 'hoeveelheid regen:', data.current.precip_mm, 'mm', 'UV - zonsterkte:', data.current.uv, 'zonsopkomst:', convertTime(index.astro.sunrise),'zondersondergang:', convertTime(index.astro.sunset));
                 localTime = localTime.slice(11, 13); // "2025-04-18 - 12:05" --> 12
-                console.log('Alleen het uur is:', localTime);
                 localTime = localTime -1; // Zonder de for loop op de correcte waarde start. 
                 let forLoop = 0;
                 for (let i = 0; i < 12; i++){
@@ -69,11 +68,11 @@ fetch(url)
                     if (localTime > 23 && forLoop == 0) {
                         localTime = Number(0); // Als we voorbij de 23 uur gaan beginnen we met 00 tellen.
                         forLoop = 1;
-                        console.log('tijd:', data.forecast.forecastday[1].hour[localTime].time.slice(11, 17), 'temperatuur:', data.forecast.forecastday[1].hour[localTime].temp_c, 'neerslag:', data.forecast.forecastday[1].hour[localTime].precip_mm); // morgen
+                        console.log('tijd:', data.forecast.forecastday[1].hour[localTime].time.slice(11, 17), 'temperatuur:', data.forecast.forecastday[1].hour[localTime].temp_c, 'neerslag:', data.forecast.forecastday[1].hour[localTime].precip_mm, 'mm'); // morgen
                     } else if (forLoop == 1) {
-                        console.log('tijd:', data.forecast.forecastday[1].hour[localTime].time.slice(11, 17), 'temperatuur:', data.forecast.forecastday[1].hour[localTime].temp_c, 'neerslag:', data.forecast.forecastday[1].hour[localTime].precip_mm); // morgen
+                        console.log('tijd:', data.forecast.forecastday[1].hour[localTime].time.slice(11, 17), 'temperatuur:', data.forecast.forecastday[1].hour[localTime].temp_c, 'neerslag:', data.forecast.forecastday[1].hour[localTime].precip_mm, 'mm'); // morgen
                     } else {
-                        console.log('tijd:', data.forecast.forecastday[0].hour[localTime].time.slice(11, 17), 'temperatuur:', data.forecast.forecastday[0].hour[localTime].temp_c, 'neerslag:', data.forecast.forecastday[0].hour[localTime].precip_mm); // vandaag // vandaag
+                        console.log('tijd:', data.forecast.forecastday[0].hour[localTime].time.slice(11, 17), 'temperatuur:', data.forecast.forecastday[0].hour[localTime].temp_c, 'neerslag:', data.forecast.forecastday[0].hour[localTime].precip_mm, 'mm'); // vandaag // vandaag
                     }
                     
                 }
