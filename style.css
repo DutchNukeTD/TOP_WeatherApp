@@ -62,11 +62,6 @@ body > div {
     align-items: end;
 }
 
-.locatieExtra {
-    display: flex;
-    justify-content: center;
-}
-
 .Temperatuur {
     font-size: 5em;
 }
@@ -81,7 +76,6 @@ body > div {
     justify-content: space-between;
 }
 
-
 .BGuren {
     display: flex;
     flex-direction: column;
@@ -90,6 +84,8 @@ body > div {
     background-color: #1e1e1e;
     max-width: 350px;
     color: rgb(187, 187, 187);
+    padding-bottom: 5px;
+    overflow-x: scroll;
 }
 
 .UrenBlok {
@@ -141,7 +137,7 @@ body > div {
     padding: 5px;;
 }
 
-.Dag {
+.Dag_ {
     display: flex;
     justify-content: space-between;
     background-color: #282828;
